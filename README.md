@@ -20,6 +20,7 @@ If Rails is complaining about authentication to the database, uncomment the user
 ## Stripe Testing
 
 Use Credit Card # 4111 1111 1111 1111 for testing success scenarios.
+4111 1111 1111 1111
 
 More information in their docs: <https://stripe.com/docs/testing#cards>
 
