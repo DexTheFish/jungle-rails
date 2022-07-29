@@ -13,10 +13,16 @@ Rails.application.routes.draw do
     post   :remove_item
   end
     
-  #resources :users, only: [:create, :new]
-  get 'users/new' => 'users#new', as: :new_user
-  post 'users' => 'users#create'
+  # USERS
+  get 'users/new' => 'users#new', as: :new_user # registration form
+  post 'users' => 'users#create' # registration submission
 
+	get '/login'     => 'sessions#new' # login form
+	post '/login'    => 'sessions#create' # login submission
+	
+	delete '/logout' => 'sessions#destroy' # logout
+
+  # ADMIN
   namespace :admin do
     root to: 'dashboard#show'
     resources :products, except: [:edit, :update, :show]
