@@ -2,20 +2,20 @@ Rails.application.routes.draw do
 
   get "about", to: "about#index"
 
-
   root to: 'products#index'
-
+  
   resources :products, only: [:index, :show]
   resources :categories, only: [:show]
-
+  resources :orders, only: [:create, :show]
+  
   resource :cart, only: [:show] do
     post   :add_item
     post   :remove_item
   end
-
-
-
-  resources :orders, only: [:create, :show]
+    
+  #resources :users, only: [:create, :new]
+  get 'users/new' => 'users#new', as: :new_user
+  post 'users' => 'users#create'
 
   namespace :admin do
     root to: 'dashboard#show'
