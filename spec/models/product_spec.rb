@@ -6,7 +6,7 @@ RSpec.describe Product, type: :model do
       @category = Category.new
     end
 
-
+    # these tests for the Product model could be improved by using the .errors.full_messages array 
     it "should verify the product is saved" do
       product = Product.new(:name => 'test', :price => 100, :quantity => 100, :category => @category)
       # expect(product.save).to be true
