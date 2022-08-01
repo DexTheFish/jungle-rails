@@ -32,6 +32,10 @@ RSpec.describe User, type: :model do
   end
 
   describe '.authenticate_with_credentials' do
-    # tests should be added here
+    it 'should authenticate with valid credentials' do
+      user = User.new(:first_name => 'dex', :last_name => 'davis', :password => '12345678', :password_confirmation => '12345678', email: 'dex@example.com')
+      user.save
+      expect(User.authenticate_with_credentials('dex@example.com', '12345678')).not_to be nil
+    end
   end
 end

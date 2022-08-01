@@ -3,9 +3,8 @@ class SessionsController < ApplicationController
   end
 
   def create
-    # Look up User in db
+    # Look up User in db, authenticate, and redirect
     user = User.authenticate_with_credentials(params[:login][:email], params[:login][:password])
-    # Authenticate and redirect
     if user
       session[:user_id] = user.id.to_s
       redirect_to root_path, notice: 'Successfully logged in!'
