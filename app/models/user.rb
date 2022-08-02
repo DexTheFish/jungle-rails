@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   has_secure_password
 
+  # before_validation :clean_email
   before_validation :clean_email
-
 	validates :email, presence: true, uniqueness: true
   validates :first_name, presence: true
   validates :last_name, presence: true

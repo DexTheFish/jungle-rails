@@ -37,5 +37,20 @@ RSpec.describe User, type: :model do
       user.save
       expect(User.authenticate_with_credentials('dex@example.com', '12345678')).not_to be nil
     end
+    it 'should authenticate with valid credentials even if email has whitespace or capitalization' do
+      user = User.new(:first_name => 'dex', :last_name => 'davis', :password => '12345678', :password_confirmation => '12345678', email: 'dex@example.com')
+      user.save
+      expect(User.authenticate_with_credentials('   deX@eXample.com', '12345678')).not_to be nil
+    end
+    it 'should not authenticate with invalid email' do
+      user = User.new(:first_name => 'dex', :last_name => 'davis', :password => '12345678', :password_confirmation => '12345678', email: 'dex@example.com')
+      user.save
+      expect(User.authenticate_with_credentials('   ddeX@eXample.com', '12345678')).to be nil
+    end
+    it 'should not authenticate with invalid password' do
+      user = User.new(:first_name => 'dex', :last_name => 'davis', :password => '12345678', :password_confirmation => '12345678', email: 'dex@example.com')
+      user.save
+      expect(User.authenticate_with_credentials('   deX@eXample.com', '123456789')).to be nil
+    end
   end
 end
