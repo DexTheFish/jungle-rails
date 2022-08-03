@@ -4,7 +4,10 @@ describe('product details', () => {
   })
 
   it("Can navigate to a product's page from the homepage", () => {
-    cy.get("article").click();
+    // click on the first product
+    cy.get("article").first().click()
+    // verify its details are rendered
+    cy.get(".product-detail").should("be.visible");
   });
 
 
