@@ -4,9 +4,9 @@ A mini e-commerce application built with Rails 6.1 for purposes of teaching Rail
 
 
 ## Pictures
-![](app/assets/images/Screen Shot 2022-08-03 at 8.34.41 PM.png)  
-![](app/assets/images/Screen Shot 2022-08-03 at 8.36.04 PM.png)  
-![](app/assets/images/Screen Shot 2022-08-03 at 8.36.55 PM.png)  
+![](https://github.com/DexTheFish/jungle-rails/blob/master/app/assets/images/Screen%20Shot%202022-08-03%20at%208.34.41%20PM.png?raw=true)  
+![](https://github.com/DexTheFish/jungle-rails/blob/master/app/assets/images/Screen%20Shot%202022-08-03%20at%208.35.07%20PM.png?raw=true)  
+![](https://github.com/DexTheFish/jungle-rails/blob/master/app/assets/images/Screen%20Shot%202022-08-03%20at%208.36.55%20PM.png?raw=true)  
 ### Setup
 
 1. Run `bundle install` to install dependencies
