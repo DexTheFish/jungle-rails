@@ -69,7 +69,7 @@
           <% if current_user %>
             <%= current_user.email %> | <%= link_to 'Log Out', logout_path, method: :delete %>
           <% else %>
-            <%= link_to 'Log In', login_path %> or <%= link_to 'Sign Up', new_user_path %>
+            <%= link_to 'Log In', login_path, class: "link-dark" %> or <%= link_to 'Sign Up', new_user_path, class: "link-dark" %>
           <% end %>
         </li>
       </ul>
